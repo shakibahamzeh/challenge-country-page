@@ -21,14 +21,14 @@ export default function Filter({ onFilter }: FilterProps) {
   return (
     <div className="flex flex-col gap-2">
       <div>
-        <strong>Region:</strong>
+        <h6 className="text-secondary text-base font-medium mb-2">Region:</h6>
         <div className="flex flex-wrap gap-2 mt-1">
           {REGIONS.map((region) => {
             const isChecked = selectedRegions.includes(region);
             return (
               <label
                 key={region}
-                className={`flex items-center space-x-1 px-3 py-1 rounded-md cursor-pointer ${
+                className={`flex items-center space-x-1 px-3 py-1 rounded-md cursor-pointer hover:bg-innerBackground hover:text-white ${
                   isChecked ? "bg-innerBackground text-white" : "bg-transparent text-textColor"
                 }`}
               >
@@ -45,7 +45,7 @@ export default function Filter({ onFilter }: FilterProps) {
           })}
         </div>
       </div>
-      Status:
+      <h6 className="text-secondary text-base font-medium mb-2">Status:</h6>
       <label className="flex items-center space-x-2">
         <input type="checkbox" onChange={(e) => setIsUN(e.target.checked)} />
         <span>Only UN Members</span>

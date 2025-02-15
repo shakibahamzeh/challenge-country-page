@@ -6,7 +6,6 @@ export const url = axios.create({
   baseURL: `${BASE_URL}/`,
 });
 
-
 url.interceptors.response.use(
   (response) => response,
   async (error) => {

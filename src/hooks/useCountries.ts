@@ -1,4 +1,4 @@
-import { getAllCountries } from "@/services/countryService";
+import { getAllCountries } from "@/services/countriesService";
 import { useQuery } from "@tanstack/react-query";
 
 export function useGetCountries(enabled: boolean = true ) {

@@ -13,6 +13,7 @@ export interface Country {
   unMember: boolean;
   independent: boolean;
   area: number;
+  cca3: string;
 }
 
 export interface TableProps {

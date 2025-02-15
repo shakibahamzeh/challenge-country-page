@@ -1,7 +1,5 @@
-// components/Search.tsx
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-
 
 interface SearchProps {
   onSearch: (query: string) => void;

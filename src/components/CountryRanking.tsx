@@ -69,16 +69,17 @@ const filteredAndSortedCountries = useMemo<Country[]>(() => {
           priority
         />
       </div>
-      <div className="bg-outerBackground absolute top-[23vh] left-0 right-0 flex justify-center m-10 rounded-2xl">
-        <div className="w-full rounded-lg h-full p-5 grid grid-cols-[1fr_3fr] gap-6">
-          <aside className="rounded-lg">
-            <p className="text-textColor">Found {filteredAndSortedCountries.length} countries</p>
-            Sort by:
+      <div className="bg-outerBackground absolute top-[23vh] left-0 right-0 p-5 m-10 rounded-2xl flex flex-col gap-5">
+        <section className="flex justify-between">
+          <p className="text-textColor">Found {filteredAndSortedCountries.length} countries</p>
+          <Search onSearch={setSearch} />
+        </section>
+        <div className="w-full rounded-lg h-full  grid grid-cols-[1fr_3fr] gap-6">
+          <aside className="rounded-lg gap-10 flex flex-col">
             <Sort onSort={setSortBy} />
             <Filter onFilter={{ setSelectedRegions, setIsUN, setIsIndependent, selectedRegions}} />
           </aside>
           <main className="flex flex-col items-end gap-4">
-            <Search onSearch={setSearch} />
             <Table countries={filteredAndSortedCountries} isPending={isPending} page={page} headers={headers} />
             <Pagination page={page} total={totalPages} setPage={setPage} />
           </main>

@@ -17,7 +17,7 @@ const Table: FC<TableProps> = ({ countries, isPending, page, headers }) => {
       <thead className="border-b">
         <tr className="text-left text-secondary font-normal">
           {headers.map(({ id, title }) => (
-            <th key={id} className="py-2">{title}</th>
+            <th key={id} className={`py-2 ${title === "Region" && "hidden lg:table-cell"}`}>{title}</th>
           ))}
         </tr>
       </thead>
@@ -30,15 +30,15 @@ const Table: FC<TableProps> = ({ countries, isPending, page, headers }) => {
           </tr>
         ) : (
           paginatedCountries.map(({ flags, name, population, area, region, cca3 }, index) => (
-            <tr key={index} className="text-left text-lg text-textColor font-medium hover:bg-secondary hover:cursor-pointer" 
+            <tr key={index} className="text-left lg:text-lg text-sm text-textColor font-medium hover:bg-secondary hover:cursor-pointer" 
             onClick={() => router.push(`/countries/${cca3.toLowerCase()}`)}>
               <td className="py-3 px-1">
                 <Image src={flags.svg} alt="flag" width={50} height={25} className="rounded" />
               </td>
-              <td className="py-3 text-2xl px-1">{name.common}</td>
-              <td className="py-3 text-2xl px-1">{population.toLocaleString()}</td>
-              <td className="py-3 text-2xl px-1">{area?.toLocaleString() || "N/A"}</td>
-              <td className="py-3 text-2xl px-1">{region}</td>
+              <td className="py-3 text-sm lg:text-2xl px-1">{name.common}</td>
+              <td className="py-3 text-sm lg:text-2xl px-1">{population.toLocaleString()}</td>
+              <td className="py-3 text-sm lg:text-2xl px-1">{area?.toLocaleString() || "N/A"}</td>
+              <td className="py-3 text-sm lg:text-2xl px-1 hidden lg:table-cell">{region}</td>
             </tr>
           ))
         )}

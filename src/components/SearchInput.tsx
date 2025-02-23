@@ -15,7 +15,7 @@ export default function Search({ onSearch }: SearchProps) {
   };
 
   return (
-    <div className="relative w-[300px]">
+    <div className="relative md:w-[300px] w-full">
       <input
         type="text"
         placeholder="Search by Name, Region, Subregion"

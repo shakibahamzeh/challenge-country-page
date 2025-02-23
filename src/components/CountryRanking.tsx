@@ -65,21 +65,29 @@ const filteredAndSortedCountries = useMemo<Country[]>(() => {
           alt="Hero Image"
           width={1920}
           height={600}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden sm:block"
+          priority
+        />
+        <Image
+          src="/hero-image-sm.jpg"
+          alt="Hero Image"
+          width={640}
+          height={300}
+          className="w-full h-full object-cover sm:hidden"
           priority
         />
       </div>
-      <div className="bg-outerBackground absolute top-[23vh] left-0 right-0 p-5 m-10 rounded-2xl flex flex-col gap-5">
-        <section className="flex justify-between">
+      <div className="bg-outerBackground absolute top-[23vh] left-0 right-0 p-3 md:p-5 md:m-10 m-6 rounded-2xl flex flex-col gap-5">
+        <section className="flex justify-between flex-col md:flex-row gap-4 md:gap-0">
           <p className="text-textColor">Found {filteredAndSortedCountries.length} countries</p>
           <Search onSearch={setSearch} />
         </section>
-        <div className="w-full rounded-lg h-full  grid grid-cols-[1fr_3fr] gap-6">
+        <div className="w-full rounded-lg h-full grid gap-6 md:grid-cols-[1fr_3fr] sm:grid-cols-1">
           <aside className="rounded-lg gap-10 flex flex-col">
             <Sort onSort={setSortBy} />
             <Filter onFilter={{ setSelectedRegions, setIsUN, setIsIndependent, selectedRegions}} />
           </aside>
-          <main className="flex flex-col items-end gap-4">
+          <main className="flex flex-col md:items-end  items-center gap-4">
             <Table countries={filteredAndSortedCountries} isPending={isPending} page={page} headers={headers} />
             <Pagination page={page} total={totalPages} setPage={setPage} />
           </main>

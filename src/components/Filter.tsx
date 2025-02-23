@@ -7,7 +7,7 @@ interface FilterProps {
   };
 }
 
-const REGIONS = ["Africa", "Americas", "Asia", "Europe", "Oceania", "Antarctic"];
+const REGIONS = [ "Americas","Antarctic","Africa", "Asia", "Europe", "Oceania", ];
 
 export default function Filter({ onFilter }: FilterProps) {
   const { selectedRegions, setSelectedRegions, setIsUN, setIsIndependent } = onFilter;

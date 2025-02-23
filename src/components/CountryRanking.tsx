@@ -1,5 +1,4 @@
 import { useGetCountries } from "@/hooks/useCountries";
-import Image from "next/image";
 import { useMemo, useState } from "react";
 import Table from "./Table";
 import Pagination from "./Pagination";
@@ -47,36 +46,7 @@ const filteredAndSortedCountries = useMemo<Country[]>(() => {
   const totalPages = Math.ceil(filteredAndSortedCountries.length / ITEMS_PER_PAGE);
 
   return (
-    <div className="relative min-h-screen">
-      
-      <div className="relative w-full h-[35vh]">
-        <div className="absolute left-0 right-0 top-[50%] flex justify-center">
-          <Image 
-            src="/Logo.svg"
-            alt="logo"
-            width={200}
-            height={25}
-            priority
-          />
-        </div>
-       
-        <Image
-          src="/hero-image.jpg"
-          alt="Hero Image"
-          width={1920}
-          height={600}
-          className="w-full h-full object-cover hidden sm:block"
-          priority
-        />
-        <Image
-          src="/hero-image-sm.jpg"
-          alt="Hero Image"
-          width={640}
-          height={300}
-          className="w-full h-full object-cover sm:hidden"
-          priority
-        />
-      </div>
+ 
       <div className="bg-outerBackground absolute top-[23vh] left-0 right-0 p-3 md:p-5 md:m-10 m-6 rounded-2xl flex flex-col gap-5">
         <section className="flex justify-between flex-col md:flex-row gap-4 md:gap-0">
           <p className="text-textColor">Found {filteredAndSortedCountries.length} countries</p>
@@ -93,6 +63,6 @@ const filteredAndSortedCountries = useMemo<Country[]>(() => {
           </main>
         </div>
       </div>
-    </div>
+
   );
 }

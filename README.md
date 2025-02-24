@@ -1,40 +1,95 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌍 countryRanking
 
-## Getting Started
+A web application for displaying and ranking countries based on population, area, and name, with sorting, filtering, and search functionalities.
+🚀 Features
 
-First, run the development server:
+✅ Displays a list of all countries sorted by population by default
+✅ Sorting options: Name (A-Z), Population, or Area
+✅ Filtering options:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+By multiple regions (Americas, Africa, Asia, Europe, Oceania, Antarctic)
+By United Nations membership
+By Independence status
+✅ Search functionality: Find countries by name, region, or subregion
+✅ Shows the total number of countries
+✅ Select a country to view more details
+✅ Displays key country details such as population, area, capital, etc.
+✅ Shows neighboring countries and allows navigation to their details
+✅ Implements pagination for better country list management.
+
+🛠️ Tech Stack
+
+Next.js (App Router)
+TypeScript
+Tailwind CSS
+Axios (for API requests)
+Framer Motion (for animations)
+TanStack React Query (for API caching and state management)
+React Icons (for icons)
+
+🔗 API Endpoints
+
+Fetch all countries (sorted by population):
+
+```
+GET https://restcountries.com/v3.1/all?sort=population
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fetch details of a specific country by code:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+GET https://restcountries.com/v3.1/alpha/{countryCode}
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+⚙️ Installation & Running the Project
 
-To learn more about Next.js, take a look at the following resources:
+Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+git clone https://github.com/shakibahamzeh/challenge-country-page.git
+cd countryRanking
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# challenge-country-page
->>>>>>> dbeb777c49e2d5fc0bd544147500c3462ab14b50
+```
+Start the development server:
+
+```
+npm run dev
+
+```
+
+Open http://localhost:3000 in your browser.
+
+📂 Project Structure
+
+```
+📦 countryRanking
+ ┣ 📂 src
+ ┃ ┣ 📂 app            # Next.js App Router pages
+ ┃ ┣ 📂 components     # Reusable UI components
+ ┃ ┣ 📂 hooks          # Custom hooks
+ ┃ ┣ 📂 provider       # React Query providers
+ ┃ ┣ 📂 services       # API calls and data fetching logic
+ ┃ ┣ 📂 types          # TypeScript types
+ ┣ 📜 package.json
+ ┣ 📜 README.md
+ ┣ 📜 eslint.config.mjs
+ ┣ 📜 postcss.config.mjs
+ ┣ 📜 tailwind.config.ts
+ ┣ 📜 next.config.ts
+ ┗ 📜 tsconfig.json
+
+```
+
+📢 Demo
+
+🔗 Live Demo: 
+ 

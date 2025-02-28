@@ -16,7 +16,7 @@ export default function Borders({ borders }: { borders: string[] }) {
     async function fetchBorders() {
       try {
         const responses = await Promise.all(
-          borders.map((code) => url.get(`alpha/${code}`).then((res) => res.data))
+          borders.map((code) => url.get(`alpha/${code.toLowerCase()}`).then((res) => res.data))
         );
 
         const formattedData = responses.map((countryArray, index) => {
@@ -45,11 +45,18 @@ export default function Borders({ borders }: { borders: string[] }) {
       {borderCountries.map((border) => (
         <div
           key={border.code}
-          className="flex items-center gap-2 border p-2 rounded cursor-pointer hover:bg-gray-200 transition"
-          onClick={() => router.push(`/country/${border.code}`)} // هدایت به صفحه‌ی کشور مرزی
+          className="flex  gap-3 flex-col p-2 rounded cursor-pointer"
+          onClick={() => router.push(`/countries/${border?.code?.toLowerCase()}`)}
         >
-          <Image src={border.flag} alt={border.name} width={40} height={25} className="rounded" />
-          <p>{border.name}</p>
+          <div className="w-20 h-16 relative">
+            <Image
+              src={border.flag}
+              alt={border.name}
+              className="rounded object-cover"
+              fill
+            />
+          </div>
+          <p className="text-xs">{border.name}</p>
         </div>
       ))}
     </div>

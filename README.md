@@ -5,13 +5,13 @@ A web application for displaying and ranking countries based on population, area
 
 ## 🚀 **Features**
 
-✅ Displays a list of all countries sorted by population by default.
-✅ **Sorting options**: Name (A-Z), Population, or Area.
-✅ **Filtering options**:
+- ✅ Displays a list of all countries sorted by population by default.
+- ✅ **Sorting options**: Name (A-Z), Population, or Area.
+- ✅ **Filtering options**:
   - By multiple regions (Americas, Africa, Asia, Europe, Oceania, Antarctic).
   - By United Nations membership.
   - By Independence status.
-✅ **Search functionality**: Find countries by name, region, or subregion.
+- ✅ **Search functionality**: Find countries by name, region, or subregion.
 
 ## 🛠️ **Tech Stack**
 

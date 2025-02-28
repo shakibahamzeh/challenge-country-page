@@ -1,7 +1,9 @@
-🌍 countryRanking
+🌍 **countryRanking**
 
 A web application for displaying and ranking countries based on population, area, and name, with sorting, filtering, and search functionalities.
-🚀 Features
+
+
+🚀 **Features**
 
 ✅ Displays a list of all countries sorted by population by default
 ✅ Sorting options: Name (A-Z), Population, or Area
@@ -17,7 +19,7 @@ By Independence status
 ✅ Shows neighboring countries and allows navigation to their details
 ✅ Implements pagination for better country list management.
 
-🛠️ Tech Stack
+🛠️ **Tech Stack**
 
 Next.js (App Router)
 TypeScript
@@ -27,7 +29,7 @@ Framer Motion (for animations)
 TanStack React Query (for API caching and state management)
 React Icons (for icons)
 
-🔗 API Endpoints
+🔗 **API Endpoints**
 
 Fetch all countries (sorted by population):
 
@@ -43,7 +45,7 @@ GET https://restcountries.com/v3.1/alpha/{countryCode}
 
 ```
 
-⚙️ Installation & Running the Project
+⚙️ **Installation & Running the Project**
 
 Clone the repository:
 
@@ -68,7 +70,8 @@ npm run dev
 
 Open http://localhost:3000 in your browser.
 
-📂 Project Structure
+
+📂 **Project Structure**
 
 ```
 📦 countryRanking
@@ -89,7 +92,7 @@ Open http://localhost:3000 in your browser.
 
 ```
 
-📢 Demo
+📢 **Demo**
 
 🔗 Live Demo: 
  

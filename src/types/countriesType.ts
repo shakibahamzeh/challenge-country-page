@@ -27,3 +27,8 @@ export interface SearchInputProps {
   search: string;
   setSearch: (value: string) => void;
 }
+
+export interface Currency {
+  name: string;
+  symbol: string;
+}

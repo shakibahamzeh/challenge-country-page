@@ -3,6 +3,7 @@
 import Borders from "@/components/Borders";
 import Loading from "@/components/Loading";
 import { useGetCountryDetail } from "@/hooks/useCountryDetail";
+import { Currency } from "@/types/countriesType";
 import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
 
@@ -59,11 +60,11 @@ export default function CountryPage() {
           </div>
           <div className="flex justify-between items-center border-y border-y-innerBackground p-4">
             <p>Currencies</p>
-            <p>
-              {Object.values(country[0].currencies)
-                .map((currency: any) => currency.name)
-                .join(", ")}
-            </p>
+           <p>
+            {(Object.values(country[0].currencies) as Currency[])
+              .map((currency) => currency.name)
+              .join(", ")}
+          </p>
           </div>
           <div className="flex justify-between items-center border-y border-y-innerBackground p-4">
             <p>Continents</p>

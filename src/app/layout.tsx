@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ReactQueryProvider>
           <div className="relative min-h-screen">
             <div className="relative w-full h-[35vh]">
-              <div className="absolute left-0 right-0 top-[110px] flex justify-center">
+              <div className="absolute left-0 right-0 top-[30%] flex justify-center">
                 <Image 
                   src="/Logo.svg"
                   alt="logo"

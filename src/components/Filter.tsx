@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 interface FilterProps {
   onFilter: {
     selectedRegions: string[];
@@ -5,12 +7,23 @@ interface FilterProps {
     setIsUN: React.Dispatch<React.SetStateAction<boolean>>;
     setIsIndependent: React.Dispatch<React.SetStateAction<boolean>>;
   };
+  initialValues: {
+    selectedRegions: string[];
+    isUN: boolean;
+    isIndependent: boolean;
+  };
 }
 
-const REGIONS = [ "Americas","Antarctic","Africa", "Asia", "Europe", "Oceania", ];
+const REGIONS = ["Americas", "Antarctic", "Africa", "Asia", "Europe", "Oceania"];
 
-export default function Filter({ onFilter }: FilterProps) {
+export default function Filter({ onFilter, initialValues }: FilterProps) {
   const { selectedRegions, setSelectedRegions, setIsUN, setIsIndependent } = onFilter;
+
+  useEffect(() => {
+    setSelectedRegions(initialValues.selectedRegions);
+    setIsUN(initialValues.isUN);
+    setIsIndependent(initialValues.isIndependent);
+  }, [initialValues, setSelectedRegions, setIsUN, setIsIndependent]);
 
   const toggleRegion = (region: string) => {
     setSelectedRegions((prev) =>
@@ -47,11 +60,19 @@ export default function Filter({ onFilter }: FilterProps) {
       </div>
       <h6 className="text-secondary text-base font-medium mb-2">Status:</h6>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" onChange={(e) => setIsUN(e.target.checked)} />
+        <input
+          type="checkbox"
+          checked={initialValues.isUN}
+          onChange={(e) => setIsUN(e.target.checked)}
+        />
         <span>Only UN Members</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" onChange={(e) => setIsIndependent(e.target.checked)} />
+        <input
+          type="checkbox"
+          checked={initialValues.isIndependent}
+          onChange={(e) => setIsIndependent(e.target.checked)}
+        />
         <span>Only Independent Countries</span>
       </label>
     </div>

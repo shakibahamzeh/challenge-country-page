@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 
 interface SearchProps {
   onSearch: (query: string) => void;
+  initialValue: string;
 }
 
-export default function Search({ onSearch }: SearchProps) {
-  const [query, setQuery] = useState("");
+export default function Search({ onSearch, initialValue }: SearchProps) {
+  const [query, setQuery] = useState(initialValue);
+
+  useEffect(() => {
+    setQuery(initialValue);
+  }, [initialValue]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
